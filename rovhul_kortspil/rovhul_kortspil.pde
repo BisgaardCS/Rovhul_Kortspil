@@ -1,6 +1,9 @@
 String[] kort = new String[54];
 int k = 0;
 int l = 0;
+String[] Spiller1;
+String[] BOT_Wilhelm;
+String[] BOT_Sandra;
 
 void setup() {
   size(500, 500);
@@ -32,4 +35,23 @@ void setup() {
     }
   }
   println(kort);
+  
+  Spiller1 = subset(kort,0,18);
+  println("");
+  println("Spiller 1");
+  for(String k:Spiller1)print(k+ "  ");
+  
+  println(" ");
+  
+  BOT_Wilhelm = subset(kort,18,18);
+  println("");
+  println("Wilhelm");
+  for(String k:BOT_Wilhelm)print(k+ "  ");
+  
+  println(" ");
+  
+  BOT_Sandra = subset(kort,36,18);
+  println("");
+  println("Sandra");
+  for(String k:BOT_Sandra)print(k+ "  ");
 }
