@@ -6,7 +6,6 @@ String[] BOT_Wilhelm;
 String[] BOT_Sandra;
 
 void setup() {
-  size(500, 500);
   String[] kulor = {"♣", "♦", "❤", "♠"};
   String[] vardi = {"3", "4", "5", "6", "7", "8", "9", "10", "Knægt", "Dronning", "Konge", "Es", "2"};
   String[] sortjoker = {"Sort Joker"};
