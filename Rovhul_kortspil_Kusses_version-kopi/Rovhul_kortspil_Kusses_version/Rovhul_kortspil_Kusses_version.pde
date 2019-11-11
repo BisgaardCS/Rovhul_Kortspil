@@ -4,8 +4,11 @@ int l = 0;
 String[] Spiller1;
 String[] BOT_Wilhelm;
 String[] BOT_Sandra;
+PImage C2;
+PImage D2;
 
 void setup() {
+  size(500,500);
   String[] kulor = {"♣", "♦", "❤", "♠"};
   String[] vardi = {"3", "4", "5", "6", "7", "8", "9", "10", "Knægt", "Dronning", "Konge", "Es", "2"};
   String[] sortjoker = {"Sort Joker"};
@@ -53,4 +56,13 @@ void setup() {
   println("");
   println("Sandra");
   for(String k:BOT_Sandra)print(k+ "  ");
+  
+  C2 = loadImage("2C.png");
+  D2 = loadImage("2D.png");
+}
+
+void draw(){
+ image(C2, 0, 0, 150, 200);
+ image(D2, 151, 0, 150, 200);
+  
 }
