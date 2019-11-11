@@ -8,7 +8,7 @@ PImage C2;
 PImage D2;
 
 void setup() {
-  size(500,500);
+  fullScreen();
   String[] kulor = {"♣", "♦", "❤", "♠"};
   String[] vardi = {"3", "4", "5", "6", "7", "8", "9", "10", "Knægt", "Dronning", "Konge", "Es", "2"};
   String[] sortjoker = {"Sort Joker"};
@@ -59,10 +59,13 @@ void setup() {
   
   C2 = loadImage("2C.png");
   D2 = loadImage("2D.png");
+
+println(" ");
+println(width);
 }
 
 void draw(){
- image(C2, 0, 0, 150, 200);
- image(D2, 151, 0, 150, 200);
+ image(C2, 0, 0, width/9, 200);
+ image(D2, (width/9)+1, 0, width/9, 200);
   
 }
