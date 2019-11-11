@@ -1,11 +1,13 @@
 String[] kort = new String[54];
 int k = 0;
 int l = 0;
-String[] Spiller1;
+String[] Bunke1;
 String[] BOT_Wilhelm;
 String[] BOT_Sandra;
+PImage C2;
 
 void setup() {
+  size(500, 500);
   String[] kulor = {"♣", "♦", "❤", "♠"};
   String[] vardi = {"3", "4", "5", "6", "7", "8", "9", "10", "Knægt", "Dronning", "Konge", "Es", "2"};
   String[] sortjoker = {"Sort Joker"};
@@ -33,24 +35,26 @@ void setup() {
       index0++;
     }
   }
-  println(kort);
-  
-  Spiller1 = subset(kort,0,18);
+
+
+  Bunke1 = subset(kort, 0, 18);
   println("");
-  println("Spiller 1");
-  for(String k:Spiller1)print(k+ "  ");
-  
-  println(" ");
-  
-  BOT_Wilhelm = subset(kort,18,18);
+  println("Player");
+  for (String k : Bunke1)print(k+ "  ");
+  println("");
+  BOT_Wilhelm = subset(kort, 18, 18);
   println("");
   println("Wilhelm");
-  for(String k:BOT_Wilhelm)print(k+ "  ");
-  
-  println(" ");
-  
-  BOT_Sandra = subset(kort,36,18);
+  for (String k : BOT_Wilhelm)print(k+ "  ");
+  println("");  
+  BOT_Sandra = subset(kort, 36, 18);
   println("");
   println("Sandra");
-  for(String k:BOT_Sandra)print(k+ "  ");
+  for (String k : BOT_Sandra)print(k+ "  ");
+
+  C2 = loadImage("2C.png");
+
+}
+void draw() {
+  image(C2, 0, 0, 150, 200);
 }
