@@ -10,22 +10,23 @@ void setup() {
   fullScreen();
   
   PImage[] kortBilleder = new PImage[52];
-String[] KortF = {"C2", "D2", "H2", "S2", "C3", "D3", "H3", "S3",
+String[] KortIMG = {"C2", "D2", "H2", "S2", "C3", "D3", "H3", "S3",
 "C4", "D4", "H4", "S4", "C5", "D5", "H5", "S5", "C6", "D6", "H6", "S6",
 "C7", "D7", "H7", "S7", "C8", "D8", "H8", "S8", "C9", "D9", "H9", "S9",
 "C10", "D10", "H10", "S10", "CJ", "DJ", "HJ", "SJ", "CQ", "DQ", "HQ", "SQ",
 "CK", "DK", "HK", "SK", "CA", "DA", "HA", "SA"};
- KortIMG = kortBilleder + KortF;
-  
-  String[] kulor = {"♣", "♦", "❤", "♠"};
-  String[] vardi = {"3", "4", "5", "6", "7", "8", "9", "10", "Knægt", "Dronning", "Konge", "Es", "2"};
+
+
+
+  String[] kulor = {"C", "D", "H", "S"};
+  String[] vardi = {"3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A", "2"};
   String[] sortjoker = {"Sort Joker"};
   String[] rodjoker= {"Rød Joker"};
 
   int sted=0;
   for (int i = 0; i < 4; i++) {
     for (int j = 0; j < 13; j++) {
-      kort[sted]=kulor[i]+" "+ vardi[j];
+      kort[sted]=kulor[i]+ vardi[j];
       sted++;
     }
   }
@@ -66,32 +67,30 @@ String[] KortF = {"C2", "D2", "H2", "S2", "C3", "D3", "H3", "S3",
   for(String k:BOT_Sandra)print(k+ "  ");
   
   //2erne
-  KortIMG = loadImage("2C.png");
-  D2 = loadImage("2D.png");
-  H2 = loadImage("2H.png");
-  S2 = loadImage("2S.png");
+  //KortIMG = loadImage("2C.png");
+  //D2 = loadImage("2D.png");
+  //H2 = loadImage("2H.png");
+  //S2 = loadImage("2S.png");
   
   //3erne
-  C3 = loadImage("3C.png");
-  D3 = loadImage("3D.png");
-  H3 = loadImage("3H.png");
-  S3 = loadImage("3S.png");
+  //C3 = loadImage("3C.png");
+  //D3 = loadImage("3D.png");
+  //H3 = loadImage("3H.png");
+  //S3 = loadImage("3S.png");
 
-println(" ");
-println(width);
 }
 
 void draw(){
   //2erne
- image(C2, 0, 0, 150, 200);
- image(D2, 150, 0, 150, 200);
- image(H2, 300, 0, 150, 200);
- image(S2, 450, 0, 150, 200);
+ //image(C2, 0, 0, 150, 200);
+ //image(D2, 150, 0, 150, 200);
+ //image(H2, 300, 0, 150, 200);
+ //image(S2, 450, 0, 150, 200);
  
  //3erne
- image(C3, 0, 200, 150, 200);
- image(D3, 150, 200, 150, 200);
- image(H3, 300, 200, 150, 200);
- image(S3, 450, 200, 150, 200);
+ //image(C3, 0, 200, 150, 200);
+ //image(D3, 150, 200, 150, 200);
+ //image(H3, 300, 200, 150, 200);
+ //image(S3, 450, 200, 150, 200);
   
 }
