@@ -9,10 +9,14 @@ int KortIMG = 0;
 PImage vistBillede;
 int index = 0;
 int x = 0;
-
+int Spiller1StartpladsX = 195;
+float Spiller1StartpladsY = 745;
+import processing.sound.*;
+SoundFile Musik;
 
 void setup() {
   fullScreen();
+  frameRate(1);
 
   String[] kulor = {"C", "D", "H", "S"};
   String[] vardi = {"3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A", "2"};
@@ -62,10 +66,11 @@ void setup() {
   println("Spiller 1");
   for(String kortSpiller1:Spiller1)print(kortSpiller1+ "  ");
   
-  
   println(" ");
-  println(width);
-  println(height);
+
+Musik = new SoundFile(this, "BaggrundsMusik.mp3");
+Musik.play();
+Musik.amp(1);
   
 }
 
@@ -76,13 +81,13 @@ PImage kortBillede(String k){
 }
 
 
-
 void draw(){
-  for(int a = 0; a < 18; a++);{
   vistBillede = kortBillede(Spiller1[index]);
-  index++;
-  x = x + 75;
-  }
-  image(vistBillede, 0+x, 0, 75, 100);
+  index = index + 1;
+  if(index > 18){index--;}
+  x = x + 50;
+  
+  image(vistBillede, Spiller1StartpladsX+x, Spiller1StartpladsY, 75*1.5, 100*1.5);
+  println(index);
   
 }
