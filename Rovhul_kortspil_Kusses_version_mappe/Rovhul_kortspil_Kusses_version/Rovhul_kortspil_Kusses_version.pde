@@ -1,4 +1,3 @@
-String[] kort = new String[54];
 PImage[] kortBillede = new PImage[54];
 int k = 0;
 int l = 0;
@@ -18,6 +17,7 @@ void setup() {
   fullScreen();
   frameRate(30);
 
+String[] kort = new String[54];
   String[] kulor = {"C", "D", "H", "S"};
   String[] vardi = {"3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A", "2"};
   String[] sortjoker = {"Sort_Joker"};
@@ -50,7 +50,9 @@ void setup() {
   BOT_Wilhelm = subset(kort,18,18);
   println("");
   println("Wilhelm");
-  for(String k:BOT_Wilhelm)print(k+ "  ");
+  for(String k:BOT_Wilhelm){
+    print(k+ "  ");
+  }
   
   println("");
   
@@ -83,6 +85,7 @@ PImage kortBillede(String k){
 
 
 void draw(){
+  clear();
   if(index < 18){
   println(index);
   vistBillede = kortBillede(Spiller1[index]);
