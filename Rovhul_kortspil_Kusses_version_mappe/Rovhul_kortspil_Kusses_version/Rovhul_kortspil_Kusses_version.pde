@@ -16,7 +16,7 @@ SoundFile Musik;
 
 void setup() {
   fullScreen();
-  frameRate(1);
+  frameRate(30);
 
   String[] kulor = {"C", "D", "H", "S"};
   String[] vardi = {"3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A", "2"};
@@ -82,12 +82,14 @@ PImage kortBillede(String k){
 
 
 void draw(){
+  if(index < 18){
+  println(index);
   vistBillede = kortBillede(Spiller1[index]);
+  image(vistBillede, Spiller1StartpladsX+x, Spiller1StartpladsY, 75*1.5, 100*1.5);
   index = index + 1;
-  if(index > 18){index--;}
+}
   x = x + 50;
   
-  image(vistBillede, Spiller1StartpladsX+x, Spiller1StartpladsY, 75*1.5, 100*1.5);
-  println(index);
+  //image(vistBillede, Spiller1StartpladsX+x, Spiller1StartpladsY, 75*1.5, 100*1.5);
   
 }
