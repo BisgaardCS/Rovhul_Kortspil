@@ -6,6 +6,7 @@ String[] BOT_Wilhelm;
 String[] BOT_Sandra;
 int KortIMG = 0;
 PImage vistBillede;
+PImage KortBack;
 int index = 0;
 int x = 0;
 int Spiller1StartpladsX = 195;
@@ -13,11 +14,22 @@ float Spiller1StartpladsY = 745;
 import processing.sound.*;
 SoundFile Musik;
 
+//Knap variabler
+float knapX = 550;
+float knapY = 610;
+float knapW = 300;
+float knapH = 80;
+
+float knapX2 = 550;
+float knapY2 = 430;
+float knapW2 = 300;
+float knapH2 = 80;
+
 void setup() {
   fullScreen();
   frameRate(30);
 
-String[] kort = new String[54];
+  String[] kort = new String[54];
   String[] kulor = {"C", "D", "H", "S"};
   String[] vardi = {"3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A", "2"};
   String[] sortjoker = {"Sort_Joker"};
@@ -46,54 +58,52 @@ String[] kort = new String[54];
     }
   }
   println(kort);
-    
-  BOT_Wilhelm = subset(kort,18,18);
+
+  BOT_Wilhelm = subset(kort, 18, 18);
   println("");
   println("Wilhelm");
-  for(String k:BOT_Wilhelm){
+  for (String k : BOT_Wilhelm) {
     print(k+ "  ");
   }
-  
+
   println("");
-  
-  BOT_Sandra = subset(kort,36,18);
+
+  BOT_Sandra = subset(kort, 36, 18);
   println("");
   println("Sandra");
-  for(String k:BOT_Sandra)print(k+ "  ");
-  
-   println("");
-  
-  Spiller1 = subset(kort,0,18);
+  for (String k : BOT_Sandra)print(k+ "  ");
+
+  println("");
+
+  Spiller1 = subset(kort, 0, 18);
   println("");
   println("Spiller 1");
-  for(String kortSpiller1:Spiller1)print(kortSpiller1+ "  ");
-  
+  for (String kortSpiller1 : Spiller1)print(kortSpiller1+ "  ");
+
   println("");
 
-Musik = new SoundFile(this, "BaggrundsMusik.mp3");
-Musik.play();
-Musik.amp(1);
-Musik.loop();
-  
-}
+  Musik = new SoundFile(this, "BaggrundsMusik.mp3");
+  Musik.play();
+  Musik.amp(1);
+  Musik.loop();
 
-PImage kortBillede(String k){
-//klog programmering
+  KortBack = loadImage("blue_back.png");
+}
+PImage kortBillede(String k) {
+  //klog programmering
   k = k + ".png";
   return loadImage(k);
 }
 
 
-void draw(){
-  clear();
-  if(index < 18){
-  println(index);
-  vistBillede = kortBillede(Spiller1[index]);
-  image(vistBillede, Spiller1StartpladsX+x, Spiller1StartpladsY, 75*1.5, 100*1.5);
-  index = index + 1;
-}
-  x = x + 50;
-  
-  //image(vistBillede, Spiller1StartpladsX+x, Spiller1StartpladsY, 75*1.5, 100*1.5);
-  
+void draw() {
+  if (index < 18) {
+    println(index);
+    vistBillede = kortBillede(Spiller1[index]);
+    image(vistBillede, Spiller1StartpladsX+x, Spiller1StartpladsY, 112.5, 150);
+    index = index + 1;
+    x = x + 50;
+
+    image(KortBack, 10, 10, 75, 100);
+  }
 }
