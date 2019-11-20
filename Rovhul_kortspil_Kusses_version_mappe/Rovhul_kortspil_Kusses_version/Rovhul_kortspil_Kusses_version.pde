@@ -52,25 +52,26 @@ void setup() {
   println("Wilhelm");
   for(String k:BOT_Wilhelm)print(k+ "  ");
   
-  println(" ");
+  println("");
   
   BOT_Sandra = subset(kort,36,18);
   println("");
   println("Sandra");
   for(String k:BOT_Sandra)print(k+ "  ");
   
-   println(" ");
+   println("");
   
   Spiller1 = subset(kort,0,18);
   println("");
   println("Spiller 1");
   for(String kortSpiller1:Spiller1)print(kortSpiller1+ "  ");
   
-  println(" ");
+  println("");
 
 Musik = new SoundFile(this, "BaggrundsMusik.mp3");
 Musik.play();
 Musik.amp(1);
+Musik.loop();
   
 }
 
